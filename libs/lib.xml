@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <Script file="LibEvent.lua"/>
+    <Script file="LibSchedule.lua"/>
+    <Script file="LibItemInfo.lua"/>
+    <Script file="LibItemEnchant.lua"/>
+    <Script file="LibStats.lua"/>
+    <Script file="LibClassicSpecs.lua"/>
+    <Script file="LibTalent.lua"/>
+    <!-- <Include file="LibItemStats\LibItemStats.xml"/> -->
+    <Include file="LibGearExam\LibGearExam.xml"/>
+</Ui>
