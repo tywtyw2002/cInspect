@@ -4,10 +4,10 @@
 
 -- Modified by for Patch 2.5.1
 
-LibGearExam.Patterns = {
+LibGearExamCMOD.Patterns = {
     --  Base Stats  --
     { p = "+?(%d+) Armor", s = "ARMOR" }, -- Should catch all armor: Base armor, Armor enchants, Armor kits
-    { p = "+?(%d+) Bonus Armor", s = "ARMOR" }, -- when was this stat added?
+    --{ p = "+?(%d+) Bonus Armor", s = "ARMOR" }, -- when was this stat added?
 
     { p = "([+-]%d+) Strength", s = "STR" },
     { p = "([+-]%d+) Agility", s = "AGI" },

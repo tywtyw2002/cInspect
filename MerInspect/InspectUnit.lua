@@ -8,7 +8,7 @@ local locale = GetLocale()
 
 local LibEvent = LibStub:GetLibrary("LibEvent.7000")
 local LibItemInfo = LibStub:GetLibrary("LibItemInfo.1000")
-local LibSpecs = LibStub:GetLibrary("LibClassicSpecs")
+local LibSpecs = LibStub:GetLibrary("LibClassicSpecs-Mod")
 --local LibItemStats = LibStub:GetLibrary("LibItemStats.1000")
 
 --裝備清單
@@ -219,16 +219,16 @@ function ShowInspectItemListFrame(unit, parent, ilevel, maxLevel, spec)
     frame:SetBackdropColor(0, 0, 0, 0.9)
     frame:SetBackdropBorderColor(color.r, color.g, color.b)
 
-	---- 修正與 DejaClassic 的相容性
-    local DCS_StatScrollFrame = _G["DCS_StatScrollFrame"]
-	if DCS_StatScrollFrame and unit == "player" then
-		frame:SetPoint("TOPLEFT", DCS_StatScrollFrame, "TOPRIGHT", 0, 0)
-	end
-
     -- Addon Skins
     if (AS and MerInspectDB.EnableAddOnSkins) then
         AS:SkinFrame(frame)
         frame:SetPoint("TOPLEFT", frame:GetParent(), "TOPRIGHT", -32, -12)
+    end
+
+    ---- 修正與 DejaClassic 的相容性
+    local DCS_StatScrollFrame = _G["DCS_StatScrollFrame"]
+    if DCS_StatScrollFrame and unit == "player" then
+        frame:SetPoint("TOPLEFT", DCS_StatScrollFrame, "TOPRIGHT", 0, 0)
     end
 
     return frame

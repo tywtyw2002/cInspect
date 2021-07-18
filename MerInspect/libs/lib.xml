@@ -5,8 +5,8 @@
     <Script file="LibItemInfo.lua"/>
     <Script file="LibItemEnchant.lua"/>
     <Script file="LibStats.lua"/>
+    <Script file="LibItemGem.lua"/>
     <Script file="LibClassicSpecs.lua"/>
     <Script file="LibTalent.lua"/>
-    <!-- <Include file="LibItemStats\LibItemStats.xml"/> -->
     <Include file="LibGearExam\LibGearExam.xml"/>
 </Ui>

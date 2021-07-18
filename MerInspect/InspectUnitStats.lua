@@ -255,7 +255,7 @@ local function StatFunc_Tank(mods, gear, spec)
         row = {['t'] = "Armor (Bear)"}
     end
 
-    row['v'] = format("(%d) %d", gear['ARMOR'], ratings)
+    row['v'] = format("(%d) %d", gear['ARMOR'], rating)
     table.insert(stats, row)
 
     --row['v'] = format("(%d) (N)%.2f%% (B)%.2f%%", gear['ARMOR'], effect, effect_boss)
@@ -403,11 +403,14 @@ local function StatFunc_Basic(mods, gear, spec)
         table.insert(stats, row)
     end
 
-    row = {['t'] = 'Mana'}
-    row['v'] = LibStats:floor((mods['MANA'] +
-               LibStats:GetManaFromInt(mods['INT'])) *
-               (1 + (mods['MANA_MOD'] or 0)))
-    table.insert(stats, row)
+    -- Do not show mana for war and rogue.
+    if (spec.class ~= "WARRIOR" and spec.class ~= "ROGUE" ) then
+        row = {['t'] = 'Mana'}
+        row['v'] = LibStats:floor((mods['MANA'] +
+                   LibStats:GetManaFromInt(mods['INT'])) *
+                   (1 + (mods['MANA_MOD'] or 0)))
+        table.insert(stats, row)
+    end
 
     -- RESILIENCE
     row = {['t'] = 'Resilience'}
